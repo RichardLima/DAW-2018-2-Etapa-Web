@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition template="/templates/template.xhtml">
+        <ui:define name="titulo">Formulário de Paciente</ui:define>
+        <ui:define name="conteudo">
+            <h:form>
+                <p:growl/>
+                <p:panelGrid columns="2">
+                    <f:facet name="header">
+                        <p:outputLabel value="Edição do Paciente"/>
+                    </f:facet>
+                    <f:facet name="footer">
+                        <div align="center">
+                            <p:commandButton value="Cancelar"
+                                             ajax="false" immediate="true"
+                                             action="#{controlePaciente.cancelar()}"/>
+                            <p:commandButton value="Salvar" icon="ui-icon-disk"
+                                             ajax="false"
+                                             action="#{controlePaciente.salvar()}"/>                                             
+                        </div>
+                    </f:facet>
+                    <p:outputLabel value="ID"/>
+                    <p:inputText value="#{controlePaciente.objeto.id}" readonly="true"
+                                 size="5"/>
+                    <p:outputLabel value="Nome" for="txtNome"/>
+                    <p:inputText id="txtNome" value="#{controlePaciente.objeto.nome}"
+                                 size="50" maxlength="50"
+                                 placeholder="Obrigatório"/>
+                    <p:outputLabel value="Nascimento" for="txtNascimento"/>
+                      <p:calendar value="#{controlePaciente.objeto.nascimento}" 
+                              id="txtNascimento"
+                              mask="true" pattern="dd/MM/yyyy" navigator="true" placeholder="00/00/0000">
+                    <f:converter converterId="converterCalendar"/>
+                      </p:calendar>
+                    <p:outputLabel value="Telefone" for="txtTelefone"/>
+                    <p:inputMask id="txtTelefone" value="#{controlePaciente.objeto.telefone}" mask="(99)99999-9999" placeholder="(99)99999-9999"/>
+                    <p:outputLabel value="Sexo" for="txtSexo"/>
+                    <p:inputText id="txtSexo" value="#{controlePaciente.objeto.sexo}"
+                                 size="50" maxlength="50" placeholder="Insira o sexo"/>
+                     <p:outputLabel value="Historico" for="txtHistorico"/>
+                    <p:inputText id="txtHistorico" value="#{controlePaciente.objeto.historico}"
+                                 size="50" placeholder="Insira o histórico"/>
+                     <p:outputLabel value="Peso" for="txtPeso"/>
+                    <p:inputText id="txtPeso" value="#{controlePaciente.objeto.peso}"
+                                 size="5" maxlength="5" placeholder="peso"/>
+                    <p:outputLabel value="Altura" for="txtAltura"/>
+                    <p:inputText id="txtAltura" value="#{controlePaciente.objeto.altura}"
+                                 size="5" maxlength="5" placeholder="altura"/>
+                                     
+                    
+                </p:panelGrid>
+            </h:form>                                
+        </ui:define>
+    </ui:composition>
+</html>
+

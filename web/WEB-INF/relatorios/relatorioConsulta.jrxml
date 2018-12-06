@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="relatorioConsulta" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="828fe692-f989-443d-851b-eea736043f01">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Dados Consultas"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="preconsulta" class="java.lang.String">
+		<fieldDescription><![CDATA[preconsulta]]></fieldDescription>
+	</field>
+	<field name="data" class="java.util.Calendar">
+		<fieldDescription><![CDATA[data]]></fieldDescription>
+	</field>
+	<field name="posconsulta" class="java.lang.String">
+		<fieldDescription><![CDATA[posconsulta]]></fieldDescription>
+	</field>
+	<field name="hora" class="java.util.Calendar">
+		<fieldDescription><![CDATA[hora]]></fieldDescription>
+	</field>
+	<field name="paciente" class="br.edu.ifsul.modelo.Paciente">
+		<fieldDescription><![CDATA[paciente]]></fieldDescription>
+	</field>
+	<field name="medico" class="br.edu.ifsul.modelo.Medico">
+		<fieldDescription><![CDATA[medico]]></fieldDescription>
+	</field>
+	<field name="receituarios" class="java.util.List">
+		<fieldDescription><![CDATA[receituarios]]></fieldDescription>
+	</field>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[id]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="exames" class="java.util.List">
+		<fieldDescription><![CDATA[exames]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="98" uuid="16255132-b4c6-41b3-8870-8c67e7ce1c24"/>
+				<graphicElement>
+					<pen lineStyle="Dotted"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="98" uuid="2a01fd0d-b65e-4053-aca0-e6f877af4089"/>
+				<box>
+					<topPen lineStyle="Solid"/>
+					<leftPen lineStyle="Solid"/>
+					<bottomPen lineStyle="Solid"/>
+					<rightPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="22" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Relatório de Consultas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="180" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="5d5b0880-0f45-4162-8a39-819acce38772"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="30" uuid="7ffe5083-67c4-4e14-a9e1-02a4fdc3bff2"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Paciente:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="60" width="100" height="30" uuid="8642b9a2-08ad-467f-b9e3-5ddb8e040313"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Médico:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="120" width="100" height="30" uuid="8f2ee1c1-4a8e-42ff-9d69-b4f56274332e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pós-consulta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="100" height="30" uuid="94ac0464-69aa-4456-8b3f-88bde4b4ed77"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pré-consulta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="50" height="30" uuid="bc55dd38-e261-495d-b8f2-518dd9e28558"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="0" width="40" height="30" uuid="02b9c0f8-6b22-42d0-a08b-db88ea6a51d6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="0" width="110" height="30" uuid="bb104ba2-4fd0-4d03-ad4c-425adbcc756e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="270" y="0" width="130" height="30" uuid="e66e0bed-bfdd-4e26-be66-87d6ad6c7f75"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data}.getTime()]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="450" y="0" width="105" height="30" uuid="ac3ca0d1-11b0-4797-a29c-2fd4a088bb84"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hora}.getTime()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="30" width="455" height="30" uuid="f1a09dd2-fff9-4a50-afc9-1cd6eb61b87a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paciente}.getNome()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="60" width="455" height="30" uuid="c4d0372a-3ffb-4c9e-99ec-4dba2a2c75da"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{medico}.getNome()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="120" width="455" height="30" uuid="f91d2803-1da1-407f-898d-5100c1b5cd71"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{posconsulta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="90" width="455" height="30" uuid="a4016229-dbc1-4307-ae1d-1d038ab4d09c"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{preconsulta}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="150" width="555" height="30" uuid="c6bb7d7b-07b0-441a-8d15-601b59ad51d4"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource(
+	(java.util.List<br.edu.ifsul.modelo.Exame>)$F{exames}
+)]]></dataSourceExpression>
+				<subreportExpression><![CDATA["subExame.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="0" y="17" width="100" height="30" uuid="3f4ab46f-bea3-4497-afe3-bc52b31fffbf"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="355" y="17" width="100" height="30" uuid="b0744c18-093d-4c42-8336-dc02d78fcdf0"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Página " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="455" y="17" width="100" height="30" uuid="8e277449-62a0-450e-b135-48b40a76e8c1"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" de " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
